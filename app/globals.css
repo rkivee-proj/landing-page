@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+:root {
+  /* Deep Sea Theme Color Palette */
+  /* Primary Accent - Deep Sea */
+  --accent-primary: #0D252E;
+  --accent-primary-hover: #1A3A49;
+  --accent-primary-pressed: #051014;
+  --accent-text-on-primary: #F5F5F0;
+  
+  /* Light Mode Colors */
+  --light-bg-canvas: #FFFFFF;
+  --light-bg-primary: #F7F8FA;
+  --light-bg-surface: #FFFFFF;
+  --light-text-primary: #1D1D1F;
+  --light-text-secondary: #5A5A5F;
+  --light-text-subtle: #8A8A8E;
+  --light-text-disabled: #C5C5C7;
+  --light-ui-border: #EAEAEB;
+  --light-ui-border-interactive: #D1D1D6;
+  --light-semantic-success: #228B22;
+  --light-semantic-error: #D32F2F;
+  --light-semantic-warning: #FFA000;
+  
+  /* Dark Mode Colors */
+  --dark-bg-canvas: #0A0807;
+  --dark-bg-surface: #14110F;
+  --dark-text-primary: #F5F5F0;
+  --dark-text-secondary: #A1A1A6;
+  --dark-text-subtle: #6E6E73;
+  --dark-text-disabled: #505054;
+  --dark-ui-border: #332D29;
+  --dark-ui-border-interactive: #514B47;
+  --dark-semantic-success: #32CD32;
+  --dark-semantic-error: #FF4D4D;
+  --dark-semantic-warning: #FFC74D;
+
+  --background: var(--dark-bg-canvas);
+  --foreground: var(--dark-text-primary);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  
+  /* Deep Sea Theme Colors */
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-primary-hover: var(--accent-primary-hover);
+  --color-accent-primary-pressed: var(--accent-primary-pressed);
+  --color-accent-text-on-primary: var(--accent-text-on-primary);
+  
+  /* Light Theme */
+  --color-light-canvas: var(--light-bg-canvas);
+  --color-light-primary: var(--light-bg-primary);
+  --color-light-surface: var(--light-bg-surface);
+  --color-light-text: var(--light-text-primary);
+  --color-light-text-secondary: var(--light-text-secondary);
+  --color-light-text-subtle: var(--light-text-subtle);
+  --color-light-border: var(--light-ui-border);
+  --color-light-border-interactive: var(--light-ui-border-interactive);
+  
+  /* Dark Theme */
+  --color-dark-canvas: var(--dark-bg-canvas);
+  --color-dark-surface: var(--dark-bg-surface);
+  --color-dark-text: var(--dark-text-primary);
+  --color-dark-text-secondary: var(--dark-text-secondary);
+  --color-dark-text-subtle: var(--dark-text-subtle);
+  --color-dark-border: var(--dark-ui-border);
+  --color-dark-border-interactive: var(--dark-ui-border-interactive);
+  
+  /* Semantic Colors */
+  --color-error: var(--dark-semantic-error);
+  --color-success: var(--dark-semantic-success);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-bg-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dark-ui-border-interactive);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+/* Smooth animations */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Deep Sea Theme gradient utilities */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-primary-hover) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-border {
+  position: relative;
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-primary-hover) 100%);
+  border-radius: 12px;
+  padding: 1px;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--dark-bg-canvas);
+  border-radius: 11px;
+}
+
+/* Deep Sea accent backgrounds */
+.bg-accent-primary {
+  background-color: var(--accent-primary);
+}
+
+.bg-accent-primary-hover {
+  background-color: var(--accent-primary-hover);
+}
+
+.text-accent-primary {
+  color: var(--accent-primary);
+}
+
+.border-accent-primary {
+  border-color: var(--accent-primary);
+}
+
+/* DENSE dotted grid pattern for DARK sections only */
+.dense-dotted-grid {
+  background-image: radial-gradient(circle, rgba(245, 245, 240, 0.08) 0.5px, transparent 0.5px);
+  background-size: 15px 15px;
+  background-position: 0 0;
+}
+
+/* Deep Sea gradient patch for dark sections */
+.deep-sea-gradient-patch {
+  background: 
+    radial-gradient(circle at 70% 20%, rgba(13, 37, 46, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 30% 80%, rgba(5, 16, 20, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(13, 37, 46, 0.05) 0%, transparent 70%);
+}
+
+/* Video container styles */
+.video-container {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 0 0 1px var(--dark-ui-border),
+    0 20px 25px -5px rgba(10, 8, 7, 0.5),
+    0 10px 10px -5px rgba(10, 8, 7, 0.3);
+}
+
+.video-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, rgba(13, 37, 46, 0.1), rgba(5, 16, 20, 0.05));
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(13, 37, 46, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(13, 37, 46, 0.6);
+  }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
