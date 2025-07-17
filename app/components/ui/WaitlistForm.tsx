@@ -74,7 +74,7 @@ export default function WaitlistForm() {
             type="email"
             value={formData.email}
             onChange={handleEmailChange}
-            placeholder="Enter your email (optional)"
+            placeholder="Enter your email"
             className={`w-full px-6 py-4 backdrop-blur-sm rounded-xl focus:outline-none transition-colors bg-dark-surface/40 text-dark-text ${
               error ? 'border border-error' : 'border border-dark-border focus:border-accent-primary'
             }`}
