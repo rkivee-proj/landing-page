@@ -6,7 +6,7 @@ import Image from 'next/image'
 export default function SocialProof() {
   return (
     <section 
-      className="py-16 px-6 lg:px-12"
+      className="py-32 pt-0 px-6 lg:px-12"
       style={{ backgroundColor: '#ffffff' }}
     >
       <div className="max-w-7xl mx-auto">

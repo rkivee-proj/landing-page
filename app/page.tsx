@@ -7,6 +7,7 @@ import DemoVideoSection from '@/components/sections/DemoVideoSection'
 import DeveloperSection from '@/components/sections/DeveloperSection'
 import Footer from '@/components/sections/Footer'
 import TimelineDemo from './components/sections/timeline-demo'
+import SmoothScroll from './components/ui/SmoothScroll'
 
 // Loading components for better UX
 function HeroSkeleton() {
@@ -56,47 +57,49 @@ function VideoSkeleton() {
 
 export default function Home() {
   return (
-    <div className="min-h-screen overflow-hidden">
-      {/* Fully Transparent Header */}
-      <div className="fixed top-0 left-0 right-0 z-50">
-        <Header />
+    <SmoothScroll>
+      <div className="min-h-screen overflow-hidden">
+        {/* Fully Transparent Header */}
+        <div className="fixed top-0 left-0 right-0 z-50">
+          <Header />
+        </div>
+
+        <main className="">
+          {/* Section 1: Hero - Pitch Black with Dense Dotted Grid + Blue Gradient */}
+          <Suspense fallback={<HeroSkeleton />}>
+            <HeroSection />
+          </Suspense>
+
+          {/* Section 3: USPs - Pure White (Clean, No Grid) */}
+          <Suspense fallback={<USPSkeleton />}>
+            <USPSection />
+          </Suspense>
+          {/* Section 2: Social Proof - Tool Integrations */}
+          <Suspense fallback={<div className="h-96 bg-white animate-pulse" />}>
+            <SocialProof />
+          </Suspense>
+          {/* Section 4: Workflow Features - Interactive Split Screen */}
+          <Suspense fallback={<div className="h-full relative" />}>
+            <TimelineDemo />
+          </Suspense>
+
+          {/* Section 5: Demo Video - Pitch Black with Dense Dotted Grid + Blue Gradient */}
+          <Suspense fallback={<VideoSkeleton />}>
+            <DemoVideoSection />
+          </Suspense>
+
+          {/* Section 7: Developer Recruitment - Dark Background */}
+          <Suspense fallback={<div className="h-96 bg-black animate-pulse" />}>
+            <DeveloperSection />
+          </Suspense>
+
+        </main>
+
+        {/* Footer - Black */}
+        <div className="bg-black">
+          <Footer />
+        </div>
       </div>
-
-      <main className="">
-        {/* Section 1: Hero - Pitch Black with Dense Dotted Grid + Blue Gradient */}
-        <Suspense fallback={<HeroSkeleton />}>
-          <HeroSection />
-        </Suspense>
-
-        {/* Section 3: USPs - Pure White (Clean, No Grid) */}
-        <Suspense fallback={<USPSkeleton />}>
-          <USPSection />
-        </Suspense>
-        {/* Section 2: Social Proof - Tool Integrations */}
-        <Suspense fallback={<div className="h-96 bg-white animate-pulse" />}>
-          <SocialProof />
-        </Suspense>
-        {/* Section 4: Workflow Features - Interactive Split Screen */}
-        <Suspense fallback={<div className="h-full relative" />}>
-          <TimelineDemo />
-        </Suspense>
-
-        {/* Section 5: Demo Video - Pitch Black with Dense Dotted Grid + Blue Gradient */}
-        <Suspense fallback={<VideoSkeleton />}>
-          <DemoVideoSection />
-        </Suspense>
-
-        {/* Section 7: Developer Recruitment - Dark Background */}
-        <Suspense fallback={<div className="h-96 bg-black animate-pulse" />}>
-          <DeveloperSection />
-        </Suspense>
-
-      </main>
-
-      {/* Footer - Black */}
-      <div className="bg-black">
-        <Footer />
-      </div>
-    </div>
+    </SmoothScroll>
   )
 }

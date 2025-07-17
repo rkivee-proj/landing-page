@@ -37,28 +37,7 @@ export default function DeveloperSection() {
           viewport={{ once: true }}
           className="text-center mb-24"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-3 px-8 py-4 mb-10 rounded-full shadow-lg"
-            style={{
-              backgroundColor: '#FFFFFF',
-              border: '1px solid rgba(37, 99, 235, 0.15)',
-              boxShadow: '0 10px 25px rgba(37, 99, 235, 0.08)'
-            }}
-          >
-            <div 
-              className="p-2 rounded-full"
-              style={{ backgroundColor: 'rgba(37, 99, 235, 0.1)' }}
-            >
-              <Code size={18} style={{ color: '#2563EB' }} />
-            </div>
-            <span style={{ color: '#1A1A1A' }} className="font-semibold text-sm tracking-wide uppercase">
-              Join Our Team
-            </span>
-          </motion.div>
+          
 
           <motion.h2 
             className="text-5xl lg:text-7xl font-bold mb-8 leading-tight"
@@ -70,9 +49,9 @@ export default function DeveloperSection() {
           >
             Build the Future of
             <span 
-              className="block bg-gradient-to-r bg-clip-text text-transparent"
+              className="block bg-gradient-to-r bg-clip-text text-black"
               style={{
-                backgroundImage: 'linear-gradient(135deg, #2563EB 0%, #3B82F6 50%, #60A5FA 100%)'
+                // backgroundImage: 'linear-gradient(135deg, #2563EB 0%, #3B82F6 50%, #60A5FA 100%)'
               }}
             >
               Media Collaboration
