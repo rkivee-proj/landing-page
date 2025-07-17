@@ -40,14 +40,14 @@ export default function DemoVideoSection() {
         ))}
       </div>
 
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-20">
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-32">
         {/* Section Header */}
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-24"
         >
           <motion.h2 
             className="text-5xl lg:text-7xl font-bold mb-8"
@@ -58,7 +58,7 @@ export default function DemoVideoSection() {
             style={{ color: '#F5F5F0' }}
           >
             See rkivee in
-            <span className="block gradient-text">Action</span>
+            <span className="block">Action</span>
           </motion.h2>
           <motion.p 
             className="text-xl max-w-3xl mx-auto"
@@ -240,7 +240,7 @@ export default function DemoVideoSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
           viewport={{ once: true }}
-          className="grid grid-cols-3 gap-8 mt-16 text-center"
+          className="grid grid-cols-3 gap-12 mt-24 text-center"
         >
           {[
             { value: '50%', label: 'Faster Collaboration' },
@@ -256,7 +256,7 @@ export default function DemoVideoSection() {
               viewport={{ once: true }}
             >
               <motion.div 
-                className="text-3xl lg:text-4xl font-bold gradient-text mb-2"
+                className="text-3xl lg:text-4xl font-bold mb-2"
                 animate={{ 
                   backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] 
                 }}
@@ -282,7 +282,7 @@ export default function DemoVideoSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
           viewport={{ once: true }}
-          className="mt-12"
+          className="mt-20"
         >
           <motion.button
             whileHover={{ 
@@ -292,7 +292,7 @@ export default function DemoVideoSection() {
             whileTap={{ scale: 0.95 }}
             className="px-12 py-4 rounded-2xl font-semibold text-lg transition-all"
             style={{
-              background: 'linear-gradient(to right, #F2A900, #FFC74D)',
+              background: 'white',
               color: '#3D2900',
               border: '1px solid rgba(245, 245, 240, 0.2)'
             }}

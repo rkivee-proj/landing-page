@@ -6,59 +6,73 @@ import { Code, GitBranch, Users, Zap } from 'lucide-react'
 export default function DeveloperSection() {
   return (
     <section 
-      className="py-32 px-6 lg:px-12"
-      style={{ backgroundColor: '#0A0807', color: '#F5F5F0' }}
+      className="py-32 px-6 lg:px-12 relative overflow-hidden"
+      style={{ backgroundColor: '#FAFAFA', color: '#1A1A1A' }}
     >
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10">
+      {/* Enhanced background pattern */}
+      <div className="absolute inset-0 opacity-[0.03]">
         <div 
           className="w-full h-full"
           style={{
-            backgroundImage: 'radial-gradient(circle, #0D252E 1px, transparent 1px)',
-            backgroundSize: '40px 40px'
+            backgroundImage: 'radial-gradient(circle, #2563EB 1px, transparent 1px)',
+            backgroundSize: '50px 50px'
           }}
         />
       </div>
+      
+      {/* Gradient overlay */}
+      <div 
+        className="absolute inset-0 opacity-30"
+        style={{
+          background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(59, 130, 246, 0.03) 50%, rgba(147, 197, 253, 0.05) 100%)'
+        }}
+      />
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-24"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-3 px-6 py-3 mb-8 rounded-full"
+            className="inline-flex items-center gap-3 px-8 py-4 mb-10 rounded-full shadow-lg"
             style={{
-              backgroundColor: 'rgba(13, 37, 46, 0.2)',
-              border: '1px solid rgba(13, 37, 46, 0.4)'
+              backgroundColor: '#FFFFFF',
+              border: '1px solid rgba(37, 99, 235, 0.15)',
+              boxShadow: '0 10px 25px rgba(37, 99, 235, 0.08)'
             }}
           >
-            <Code size={20} style={{ color: '#0D252E' }} />
-            <span style={{ color: '#F5F5F0' }} className="font-semibold">
+            <div 
+              className="p-2 rounded-full"
+              style={{ backgroundColor: 'rgba(37, 99, 235, 0.1)' }}
+            >
+              <Code size={18} style={{ color: '#2563EB' }} />
+            </div>
+            <span style={{ color: '#1A1A1A' }} className="font-semibold text-sm tracking-wide uppercase">
               Join Our Team
             </span>
           </motion.div>
 
           <motion.h2 
-            className="text-5xl lg:text-7xl font-bold mb-8"
+            className="text-5xl lg:text-7xl font-bold mb-8 leading-tight"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
-            style={{ color: '#F5F5F0' }}
+            style={{ color: '#1A1A1A' }}
           >
             Build the Future of
             <span 
-              className="block"
+              className="block bg-gradient-to-r bg-clip-text text-transparent"
               style={{
-                color: '#F5F5F0'
+                backgroundImage: 'linear-gradient(135deg, #2563EB 0%, #3B82F6 50%, #60A5FA 100%)'
               }}
             >
               Media Collaboration
@@ -71,68 +85,80 @@ export default function DeveloperSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
-            style={{ color: '#A1A1A6' }}
+            style={{ color: '#6B7280' }}
           >
             Are you a passionate developer who believes in revolutionizing how creative teams collaborate? 
             Join us in building the next generation of media collaboration tools.
           </motion.p>
         </motion.div>
 
-        {/* Features Grid */}
+        {/* Enhanced Features Grid */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="text-center p-8">
-            <div 
-              className="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center"
-              style={{ backgroundColor: 'rgba(13, 37, 46, 0.3)' }}
+          {[
+            {
+              icon: GitBranch,
+              title: "Modern Tech Stack",
+              description: "Work with cutting-edge technologies and build scalable solutions",
+              gradient: "linear-gradient(135deg, #2563EB 0%, #3B82F6 100%)"
+            },
+            {
+              icon: Users,
+              title: "Collaborative Culture", 
+              description: "Join a team that values innovation, creativity, and open communication",
+              gradient: "linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%)"
+            },
+            {
+              icon: Zap,
+              title: "Impact & Growth",
+              description: "Shape the future of media collaboration and grow your skills",
+              gradient: "linear-gradient(135deg, #60A5FA 0%, #93C5FD 100%)"
+            }
+          ].map((feature, index) => (
+            <motion.div 
+              key={index}
+              className="group relative p-8 rounded-2xl transition-all duration-300 hover:shadow-xl"
+              style={{ 
+                backgroundColor: '#FFFFFF',
+                border: '1px solid rgba(37, 99, 235, 0.08)',
+                boxShadow: '0 4px 20px rgba(37, 99, 235, 0.05)'
+              }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
+              viewport={{ once: true }}
             >
-              <GitBranch size={28} style={{ color: '#0D252E' }} />
-            </div>
-            <h3 className="text-xl font-semibold mb-4" style={{ color: '#F5F5F0' }}>
-              Modern Tech Stack
-            </h3>
-            <p style={{ color: '#A1A1A6' }}>
-              Work with cutting-edge technologies and build scalable solutions
-            </p>
-          </div>
-
-          <div className="text-center p-8">
-            <div 
-              className="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center"
-              style={{ backgroundColor: 'rgba(13, 37, 46, 0.3)' }}
-            >
-              <Users size={28} style={{ color: '#0D252E' }} />
-            </div>
-            <h3 className="text-xl font-semibold mb-4" style={{ color: '#F5F5F0' }}>
-              Collaborative Culture
-            </h3>
-            <p style={{ color: '#A1A1A6' }}>
-              Join a team that values innovation, creativity, and open communication
-            </p>
-          </div>
-
-          <div className="text-center p-8">
-            <div 
-              className="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center"
-              style={{ backgroundColor: 'rgba(13, 37, 46, 0.3)' }}
-            >
-              <Zap size={28} style={{ color: '#0D252E' }} />
-            </div>
-            <h3 className="text-xl font-semibold mb-4" style={{ color: '#F5F5F0' }}>
-              Impact & Growth
-            </h3>
-            <p style={{ color: '#A1A1A6' }}>
-              Shape the future of media collaboration and grow your skills
-            </p>
-          </div>
+              <div 
+                className="w-16 h-16 mb-6 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                style={{ background: feature.gradient }}
+              >
+                <feature.icon size={26} style={{ color: '#FFFFFF' }} />
+              </div>
+              <h3 className="text-xl font-bold mb-4" style={{ color: '#1A1A1A' }}>
+                {feature.title}
+              </h3>
+              <p className="leading-relaxed" style={{ color: '#6B7280' }}>
+                {feature.description}
+              </p>
+              
+              {/* Subtle hover effect */}
+              <div 
+                className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.02) 0%, rgba(147, 197, 253, 0.02) 100%)'
+                }}
+              />
+            </motion.div>
+          ))}
         </motion.div>
 
-        {/* CTA Button */}
+        {/* Enhanced CTA Button */}
         <motion.div 
           className="text-center"
           initial={{ opacity: 0, y: 30 }}
@@ -141,29 +167,34 @@ export default function DeveloperSection() {
           viewport={{ once: true }}
         >
           <motion.button
-            whileHover={{ scale: 1.05, y: -2 }}
+            whileHover={{ scale: 1.05, y: -3 }}
             whileTap={{ scale: 0.95 }}
-            className="px-12 py-6 text-lg font-semibold rounded-xl transition-all duration-300"
+            className="relative px-12 py-6 text-lg font-bold rounded-2xl transition-all duration-300 overflow-hidden group"
             style={{
-              backgroundColor: '#F5F5F0',
-              color: '#0A0807',
-              boxShadow: '0 10px 40px rgba(245, 245, 240, 0.3)'
+              background: 'linear-gradient(135deg, #2563EB 0%, #3B82F6 100%)',
+              color: '#FFFFFF',
+              boxShadow: '0 10px 40px rgba(37, 99, 235, 0.3)'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#E5E5E0'
-              e.currentTarget.style.boxShadow = '0 15px 50px rgba(245, 245, 240, 0.4)'
+              e.currentTarget.style.transform = 'translateY(-3px) scale(1.05)'
+              e.currentTarget.style.boxShadow = '0 20px 60px rgba(37, 99, 235, 0.4)'
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#F5F5F0'
-              e.currentTarget.style.boxShadow = '0 10px 40px rgba(245, 245, 240, 0.3)'
+              e.currentTarget.style.transform = 'translateY(0px) scale(1)'
+              e.currentTarget.style.boxShadow = '0 10px 40px rgba(37, 99, 235, 0.3)'
             }}
           >
-            Join Our Developer Team
+            {/* Button background effect */}
+            <div 
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-10 group-hover:opacity-25 transition-opacity duration-500"
+              style={{ transform: 'translateX(-100%)', animation: 'shimmer 3s infinite' }}
+            />
+            <span className="relative z-10">Join Our Developer Team</span>
           </motion.button>
           
           <motion.p 
-            className="mt-6 text-sm"
-            style={{ color: '#6E6E73' }}
+            className="mt-8 text-base"
+            style={{ color: '#9CA3AF' }}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 1 }}
@@ -173,6 +204,17 @@ export default function DeveloperSection() {
           </motion.p>
         </motion.div>
       </div>
+      
+      <style jsx>{`
+        @keyframes shimmer {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(100%);
+          }
+        }
+      `}</style>
     </section>
   )
 } 

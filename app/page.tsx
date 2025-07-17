@@ -1,12 +1,12 @@
 import { Suspense } from 'react'
 import Header from '@/components/sections/Header'
 import HeroSection from '@/components/sections/HeroSection'
+import SocialProof from '@/components/sections/SocialProof'
 import USPSection from '@/components/sections/USPSection'
 import DemoVideoSection from '@/components/sections/DemoVideoSection'
-import CTASection from '@/components/sections/CTASection'
 import DeveloperSection from '@/components/sections/DeveloperSection'
-import InvestorSection from '@/components/sections/InvestorSection'
 import Footer from '@/components/sections/Footer'
+import TimelineDemo from './components/sections/timeline-demo'
 
 // Loading components for better UX
 function HeroSkeleton() {
@@ -61,41 +61,38 @@ export default function Home() {
       <div className="fixed top-0 left-0 right-0 z-50">
         <Header />
       </div>
-      
-      <main>
+
+      <main className="">
         {/* Section 1: Hero - Pitch Black with Dense Dotted Grid + Blue Gradient */}
         <Suspense fallback={<HeroSkeleton />}>
           <HeroSection />
         </Suspense>
-        
-        {/* Section 2: USPs - Pure White (Clean, No Grid) */}
+
+        {/* Section 3: USPs - Pure White (Clean, No Grid) */}
         <Suspense fallback={<USPSkeleton />}>
           <USPSection />
         </Suspense>
-        
-        {/* Section 3: Demo Video - Pitch Black with Dense Dotted Grid + Blue Gradient */}
+        {/* Section 2: Social Proof - Tool Integrations */}
+        <Suspense fallback={<div className="h-96 bg-white animate-pulse" />}>
+          <SocialProof />
+        </Suspense>
+        {/* Section 4: Workflow Features - Interactive Split Screen */}
+        <Suspense fallback={<div className="h-full relative" />}>
+          <TimelineDemo />
+        </Suspense>
+
+        {/* Section 5: Demo Video - Pitch Black with Dense Dotted Grid + Blue Gradient */}
         <Suspense fallback={<VideoSkeleton />}>
           <DemoVideoSection />
         </Suspense>
-        
-        {/* Section 4: CTA - White Background */}
-        <Suspense fallback={<div className="h-96 bg-white animate-pulse" />}>
-          <div className="bg-white">
-            <CTASection />
-          </div>
-        </Suspense>
 
-        {/* Section 5: Developer Recruitment - Dark Background */}
+        {/* Section 7: Developer Recruitment - Dark Background */}
         <Suspense fallback={<div className="h-96 bg-black animate-pulse" />}>
           <DeveloperSection />
         </Suspense>
 
-        {/* Section 6: Investor Outreach - White Background */}
-        <Suspense fallback={<div className="h-96 bg-white animate-pulse" />}>
-          <InvestorSection />
-        </Suspense>
       </main>
-      
+
       {/* Footer - Black */}
       <div className="bg-black">
         <Footer />

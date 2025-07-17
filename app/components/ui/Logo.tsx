@@ -6,7 +6,7 @@ interface LogoProps {
 
 export default function Logo({ className = "" }: LogoProps) {
   return (
-    <div className={`text-2xl font-bold gradient-text ${className}`}>
+    <div className={`text-2xl font-bold text-white ${className}`}>
       {COMPANY_INFO.name}
     </div>
   )

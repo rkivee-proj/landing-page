@@ -31,8 +31,8 @@ export default function HeroSection() {
       {/* Optional overlay for better text readability */}
       <div className="absolute inset-0 bg-dark-canvas/30" />
 
-      <div className="relative z-10 flex flex-col justify-center min-h-screen px-6 lg:px-12 max-w-7xl mx-auto">
-        <div className="max-w-4xl">
+      <div className="relative z-10 flex flex-col justify-center min-h-screen px-6 lg:px-12 py-32 max-w-7xl mx-auto">
+        <div className="max-w-4xl space-y-12">
           {/* <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -69,7 +69,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg lg:text-xl mb-8 max-w-3xl leading-relaxed text-dark-text"
+            className="text-lg lg:text-xl mb-12 max-w-3xl leading-relaxed text-dark-text"
           >
             {COMPANY_INFO.description}
           </motion.p>
@@ -78,7 +78,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="mb-8"
+            className="mb-12"
           >
             <WaitlistForm />
           </motion.div>
@@ -111,7 +111,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-16 left-1/2 transform -translate-x-1/2"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}

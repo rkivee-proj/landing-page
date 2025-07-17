@@ -12,7 +12,7 @@ export default function FeaturesSection() {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="relative z-10 py-20 px-6 lg:px-12"
+      className="relative z-10 py-32 px-6 lg:px-12"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div 
@@ -20,7 +20,7 @@ export default function FeaturesSection() {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-24"
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
             Built for Modern 
@@ -32,7 +32,7 @@ export default function FeaturesSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {FEATURES.map((feature, index) => (
             <AnimatedFeatureCard 
               key={feature.title} 
