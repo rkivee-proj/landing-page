@@ -4,12 +4,11 @@ import { Timeline } from "../ui/timeline";
 export default function TimelineDemo() {
   const data = [
     {
-      title: "Track Every Cut",
+      title: "Commit, Don't Just Save",
       content: (
         <div key="1">
-          <p className="mb-8 text-md font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            Monitor every edit, revision, and creative decision in your video projects with precision timeline tracking. See a complete history of changes and revert to any point in time.
-          </p>
+          <p className="mb-8 text-md font-normal text-neutral-800 md:text-md dark:text-neutral-200">
+            See a full history of every change made to your project. With a simple commit, you can save a snapshot of your work with a clear message, revert to any previous state instantly, and never fear overwriting a great idea again.          </p>
           <div className="grid grid-cols-2 gap-4">
             <img
               src="https://assets.aceternity.com/templates/startup-1.webp"
@@ -44,15 +43,11 @@ export default function TimelineDemo() {
       ),
     },
     {
-      title: "Cloud Asset Lockstep",
+      title: "One Project, One Source of Truth",
       content: (
         <div key="2">
-          <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            Keep all your media assets synchronized across your team in real-time with secure cloud storage. Your project files work seamlessly with Google Drive integration.
-          </p>
-          <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            Never worry about missing assets or outdated files. Everything stays in perfect sync for your entire creative team.
-          </p>
+          <p className="mb-8 text-md font-normal text-neutral-800 md:text-md dark:text-neutral-200">
+            Your project files are versioned by Git while your large media files are intelligently synced to the cloud. Everyone on your team has access to the latest assets, all the time, from anywhere. No more passing hard drives.          </p>
           <div className="grid grid-cols-2 gap-4">
             <img
               src="https://assets.aceternity.com/pro/hero-sections.png"
@@ -87,29 +82,12 @@ export default function TimelineDemo() {
       ),
     },
     {
-      title: "Breeze-Like Feedback",
+      title: "Collaborate Without Conflict",
       content: (
         <div key="3">
-          <p className="mb-4 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            Make team feedback effortless with contextual comments, annotations, and streamlined approval workflows. Transform how your team collaborates on creative projects.
-          </p>
-          <div className="mb-8">
-            <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-              ✅ Frame-accurate comments and annotations
-            </div>
-            <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-              ✅ Contextual feedback on specific edits
-            </div>
-            <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-              ✅ Streamlined approval workflows
-            </div>
-            <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-              ✅ Real-time collaboration tools
-            </div>
-            <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-              ✅ Integrated discussion threads
-            </div>
-          </div>
+          <p className="mb-4 text-md font-normal text-neutral-800 md:text-md dark:text-neutral-200">
+            Use branches to let multiple editors, colorists, and sound designers work on the same project simultaneously. Experiment freely without affecting the main cut, then merge changes back with confidence when they're ready.          </p>
+
           <div className="grid grid-cols-2 gap-4">
             <img
               src="https://assets.aceternity.com/pro/hero-sections.png"
@@ -144,15 +122,11 @@ export default function TimelineDemo() {
       ),
     },
     {
-      title: "Smart Archiving",
+      title: "See Every Change, Visually",
       content: (
         <div key="4">
-          <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            Automatically organize and archive your project versions, assets, and creative iterations for easy retrieval. Never lose track of your creative work again.
-          </p>
-          <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            Intelligent organization keeps your creative history accessible while maintaining clean, efficient project workflows.
-          </p>
+          <p className="mb-8 text-md font-normal text-neutral-800 md:text-md dark:text-neutral-200">
+            Stop hunting for changes. Our revolutionary diff tool lets you visually compare two versions of your timeline. Instantly spot added clips, changed effects, and modified audio with frame-perfect accuracy.          </p>
           <div className="grid grid-cols-2 gap-4">
             <img
               src="https://assets.aceternity.com/pro/hero-sections.png"

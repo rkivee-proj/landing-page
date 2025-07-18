@@ -14,34 +14,28 @@ import type { Feature } from '@/types'
 export const FEATURES: Feature[] = [
   {
     icon: Video,
-    title: "Track Every Cut",
-    description: "Monitor every edit, revision, and creative decision in your video projects with precision timeline tracking."
+    title: "Trapped on a Hard Drive",
+    description: "Your team's work is stalled by manual uploads and files trapped on one person's computer.",
+    image: "assets/LoneHdd.png"
   },
   {
     icon: Cloud,
-    title: "Cloud Asset Lockstep",
-    description: "Keep all your media assets synchronized across your team in real-time with secure cloud storage."
+    title: "The One-Way Workflow",
+    description: "Work happens in sequence—everyone waits their turn, wasting time and delaying delivery.",
+    image: "assets/SequentialWorkflow.png"
   },
   {
     icon: MessageCircle,
-    title: "Breeze-Like Feedback",
-    description: "Make team feedback effortless with contextual comments, annotations, and streamlined approval workflows."
+    title: "The Graveyard of 'Finals'",
+    description: "Without versioning, your project folder is a maze of confusing files—no history, no safety net, no certainty.",
+    image: "assets/Graveyard.png"
   },
   {
     icon: Users,
-    title: "Seamless Collaboration",
-    description: "Work together in real-time with your creative team, seeing changes and updates as they happen."
+    title: "The Chaos of Comments",
+    description: "Feedback is scattered across emails, chats, and docs—making it easy to miss and hard to manage.",
+    image: "assets/Communication.png"
   },
-  {
-    icon: Archive,
-    title: "Smart Archiving",
-    description: "Automatically organize and archive your project versions, assets, and creative iterations for easy retrieval."
-  },
-  {
-    icon: Layers,
-    title: "Asset Management",
-    description: "Organize, version, and share video assets, clips, and resources across all your projects effortlessly."
-  }
 ]
 
 export const COMPANY_INFO = {

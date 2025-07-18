@@ -58,13 +58,13 @@ export default function Header() {
           >
             Demo
           </motion.a>
-          <motion.a 
+          {/* <motion.a 
             href="#pricing"
             className="text-white/80 transition-colors hover:text-accent-primary"
             whileHover={{ y: -2 }}
           >
             Pricing
-          </motion.a>
+          </motion.a> */}
         </nav>
         <motion.button
           whileHover={{ scale: 1.05 }}

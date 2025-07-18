@@ -54,7 +54,7 @@ export default function WaitlistForm() {
       >
         <Check size={24} className="text-accent-primary" />
         <span className="text-lg text-dark-text">
-          You're on the waitlist! We'll be in touch soon.
+          You're in! Early access coming soon.
         </span>
       </motion.div>
     )
@@ -121,7 +121,7 @@ export default function WaitlistForm() {
               />
             ) : (
               <>
-                Join Waitlist <ArrowRight size={18} />
+                Early Access <ArrowRight size={18} />
               </>
             )}
           </span>
