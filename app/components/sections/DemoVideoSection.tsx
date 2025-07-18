@@ -7,10 +7,10 @@ export default function DemoVideoSection() {
   return (
     <section
       className="min-h-screen relative overflow-hidden dense-dotted-grid"
-      style={{ backgroundColor: '#0A0807', color: '#F5F5F0' }}
+      // style={{ backgroundColor: '#0A0807', color: '#F5F5F0' }}
     >
       {/* Strong amber gradient patch */}
-      <div className="absolute inset-0 amber-gradient-patch" />
+      {/* <div className="absolute inset-0 amber-gradient-patch" /> */}
 
       {/* Animated background elements */}
       <div className="absolute inset-0">
