@@ -69,13 +69,13 @@ export default function WaitlistForm() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
       >
-        <div className="flex-1">
+        <div className="flex-1 w-full">
           <input
             type="email"
             value={formData.email}
             onChange={handleEmailChange}
             placeholder="Enter your email"
-            className={`w-full px-6 py-4 backdrop-blur-sm rounded-xl focus:outline-none transition-colors bg-dark-surface/40 text-dark-text ${
+            className={`w-full px-6 py-4 backdrop-blur-sm opacity-50 rounded-xl focus:outline-none transition-colors bg-dark-surface/40 text-dark-text ${
               error ? 'border border-error' : 'border border-dark-border focus:border-accent-primary'
             }`}
             disabled={isLoading}
@@ -86,21 +86,21 @@ export default function WaitlistForm() {
           whileHover={{ scale: isLoading ? 1 : 1.05, y: isLoading ? 0 : -3 }}
           whileTap={{ scale: isLoading ? 1 : 0.95 }}
           disabled={isLoading}
-          className="relative px-8 py-4 rounded-full font-semibold transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed min-w-[140px] justify-center text-white overflow-hidden group"
+          className="relative px-8 py-4 rounded-full bg-white text-black font-semibold transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed min-w-[140px] justify-center overflow-hidden group"
           style={{
-            background: 'linear-gradient(135deg, #FCD34D 0%, #F59E0B 50%, #EF4444 100%)',
-            boxShadow: '0 0 30px rgba(245, 158, 11, 0.6), 0 0 60px rgba(245, 158, 11, 0.3), 0 0 90px rgba(245, 158, 11, 0.1)'
+            // background: 'linear-gradient(135deg, #FCD34D 0%, #F59E0B 50%, #EF4444 100%)',
+            // boxShadow: '0 0 30px rgba(245, 158, 11, 0.6), 0 0 60px rgba(245, 158, 11, 0.3), 0 0 90px rgba(245, 158, 11, 0.1)'
           }}
           onMouseEnter={(e) => {
             if (!isLoading) {
               e.currentTarget.style.transform = 'translateY(-3px) scale(1.05)'
-              e.currentTarget.style.boxShadow = '0 0 40px rgba(245, 158, 11, 0.8), 0 0 80px rgba(245, 158, 11, 0.5), 0 0 120px rgba(245, 158, 11, 0.2)'
+              // e.currentTarget.style.boxShadow = '0 0 40px rgba(245, 158, 11, 0.8), 0 0 80px rgba(245, 158, 11, 0.5), 0 0 120px rgba(245, 158, 11, 0.2)'
             }
           }}
           onMouseLeave={(e) => {
             if (!isLoading) {
               e.currentTarget.style.transform = 'translateY(0px) scale(1)'
-              e.currentTarget.style.boxShadow = '0 0 30px rgba(245, 158, 11, 0.6), 0 0 60px rgba(245, 158, 11, 0.3), 0 0 90px rgba(245, 158, 11, 0.1)'
+              // e.currentTarget.style.boxShadow = '0 0 30px rgba(245, 158, 11, 0.6), 0 0 60px rgba(245, 158, 11, 0.3), 0 0 90px rgba(245, 158, 11, 0.1)'
             }
           }}
         >
