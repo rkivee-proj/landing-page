@@ -7,7 +7,8 @@ export default function DemoVideoSection() {
   return (
     <section
       className="min-h-screen relative overflow-hidden dense-dotted-grid"
-      // style={{ backgroundColor: '#0A0807', color: '#F5F5F0' }}
+      // style={{ backgroundColor: '#0A0807', color: '#F5F5F0' }} 
+      id="demo"
     >
       {/* Strong amber gradient patch */}
       {/* <div className="absolute inset-0 amber-gradient-patch" /> */}
@@ -82,7 +83,7 @@ export default function DemoVideoSection() {
             <iframe
               width="100%"
               height="100%"
-              src="https://www.youtube.com/embed/rapbhpW3jPM?si=JI50k2vtvdEwuNu9"
+              src="https://www.youtube.com/embed/29_cYj_ngRM?si=sgkcdGjddbLyFT1A"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

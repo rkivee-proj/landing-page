@@ -64,12 +64,12 @@ export default function WaitlistForm() {
     <div className="w-full max-w-md">
       <motion.form 
         onSubmit={handleSubmit} 
-        className="flex gap-4"
+        className="flex gap-4 flex-wrap"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
       >
-        <div className="flex-1 w-full">
+        <div className="flex-1 w-full min-w-48">
           <input
             type="email"
             value={formData.email}

@@ -48,7 +48,7 @@ export default function SocialProof() {
             </div>
             <div>
               <div className="font-semibold" style={{ color: '#111827' }}>
-                Adobe Premiere Pro
+                Premiere Pro
               </div>
               <div className="text-sm" style={{ color: '#6B7280' }}>
                 Video editing

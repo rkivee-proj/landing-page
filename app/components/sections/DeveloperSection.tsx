@@ -1,26 +1,37 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Code, GitBranch, Users, Zap } from 'lucide-react'
+import { Code, GitBranch, Users, Zap, ArrowRight, Sparkles } from 'lucide-react'
 
 export default function DeveloperSection() {
   return (
-    <section 
-      className="py-32 px-6 lg:px-12 relative overflow-hidden"
+    <section
+      className="py-32 pt-24  px-6 lg:px-12 relative overflow-hidden"
       style={{ backgroundColor: '#FAFAFA', color: '#1A1A1A' }}
     >
 
       <div className=" mx-auto relative z-10">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <motion.h2 
-            className="text-3xl lg:text-5xl font-bold mb-3 leading-tight"
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100"
+          >
+            <Sparkles className="w-4 h-4 text-blue-600" />
+            <span className="text-sm font-medium text-blue-700">We're Hiring</span>
+          </motion.div>
+
+          <motion.h2
+            className="text-4xl lg:text-6xl font-bold mb-6 leading-tight"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -28,7 +39,7 @@ export default function DeveloperSection() {
             style={{ color: '#1A1A1A' }}
           >
             Build the Future of
-            <span 
+            <span
               className="block bg-gradient-to-r bg-clip-text text-black"
               style={{
                 // backgroundImage: 'linear-gradient(135deg, #2563EB 0%, #3B82F6 50%, #60A5FA 100%)'
@@ -38,64 +49,122 @@ export default function DeveloperSection() {
             </span>
           </motion.h2>
 
-          <motion.p 
-            className="text-base lg:text-lg max-w-2xl mx-auto leading-relaxed"
+          <motion.p
+            className="text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed text-gray-600"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
-            style={{ color: '#6B7280' }}
           >
-            Are you a passionate developer who believes in revolutionizing how creative teams collaborate? 
+            Are you a passionate developer who believes in revolutionizing how creative teams collaborate?
             Join us in building the next generation of media collaboration tools.
           </motion.p>
         </motion.div>
 
-        {/* Super Short Cards */}
-        <motion.div 
-          className="mb-12 max-w-4xl mx-auto flex items-center justify-center gap-6"
+        {/* Enhanced Role Cards Grid */}
+        <motion.div
+          className="flex flex-wrap justify-center items-center gap-8 mb-16 "
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          {[ 
+          {[
             {
               title: "Full Stack Engineer",
-              subtitle: "Build our core platform.",
-              image: "assets/dev.png"
+              subtitle: "Build our core platform with cutting-edge technologies",
+              icon: Code,
+              gradient: "from-emerald-500 to-teal-600",
+              bgGradient: "from-emerald-50 to-teal-50",
+              borderColor: "border-emerald-200",
+              textColor: "text-emerald-700",
+              description: "Architect scalable solutions and build the foundation of our platform"
             },
             {
               title: "UI/UX Designer",
-              subtitle: "Design unforgettable UX.",
-              image: "assets/uiux.png"
+              subtitle: "Design unforgettable user experiences",
+              icon: Users,
+              gradient: "from-purple-500 to-pink-600",
+              bgGradient: "from-purple-50 to-pink-50",
+              borderColor: "border-purple-200",
+              textColor: "text-purple-700",
+              description: "Create intuitive interfaces that delight users and drive engagement"
             },
             {
               title: "Video Editor",
-              subtitle: "Be the user's voice.",
-              image: "assets/video.png"
+              subtitle: "Be the user's voice and creative vision",
+              icon: Zap,
+              gradient: "from-orange-500 to-red-600",
+              bgGradient: "from-orange-50 to-red-50",
+              borderColor: "border-orange-200",
+              textColor: "text-orange-700",
+              description: "Shape our product through the lens of creative professionals"
             }
           ].map((role, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
-              className="relative rounded-3xl overflow-hidden bg-gray-200 border border-gray-100 shadow-sm m-0 text-center w-64 h-44 flex items-center justify-center"
-              style={{ backgroundImage: `url(${role.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+              className="group relative"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.7 + idx * 0.1 }}
+              transition={{ duration: 0.6, delay: 0.7 + idx * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="absolute inset-0  bg-opacity-50" />
-              <div className="relative z-10 w-full flex flex-col items-center justify-center">
-                <h3 className="text-lg font-bold mb-1 text-white drop-shadow-lg">{role.title}</h3>
-                {/* <p className="text-sm text-gray-200 drop-shadow-lg">{role.subtitle}</p> */}
-              </div>
+              <motion.div
+                className={`relative p-8 max-w-96 rounded-2xl border-2 transition-all duration-300 cursor-pointer overflow-hidden ${role.borderColor} ${role.bgGradient} hover:shadow-2xl hover:scale-105`}
+                whileHover={{ y: -8 }}
+                style={{
+                  background: `linear-gradient(135deg, var(--tw-gradient-stops))`,
+                  '--tw-gradient-from': role.bgGradient.includes('emerald') ? '#ecfdf5' : role.bgGradient.includes('purple') ? '#faf5ff' : '#fff7ed',
+                  '--tw-gradient-to': role.bgGradient.includes('emerald') ? '#ccfbf1' : role.bgGradient.includes('purple') ? '#f3e8ff' : '#ffedd5',
+                } as any}
+              >
+                {/* Background Pattern */}
+                {/* <div className="absolute inset-0 opacity-5">
+                  <div className="absolute top-4 right-4 w-16 h-16 rounded-full bg-gradient-to-r from-gray-400 to-gray-600"></div>
+                  <div className="absolute bottom-4 left-4 w-8 h-8 rounded-full bg-gradient-to-r from-gray-400 to-gray-600"></div>
+                </div> */}
+
+                {/* Icon */}
+                {/* <motion.div
+                  className={`relative z-10 w-16 h-16 rounded-xl bg-gradient-to-r ${role.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                  whileHover={{ rotate: 5 }}
+                >
+                  <role.icon className="w-8 h-8 text-white" />
+                </motion.div> */}
+
+                {/* Content */}
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-bold mb-3 text-gray-900 group-hover:text-gray-800 transition-colors">
+                    {role.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed">
+                    {role.description}
+                  </p>
+
+                  {/* Hover Arrow */}
+                  {/* <motion.div 
+                    className="flex items-center gap-2 text-sm font-medium text-gray-500 group-hover:text-gray-700 transition-colors"
+                    initial={{ x: 0 }}
+                    whileHover={{ x: 4 }}
+                  >
+                    <span>Learn more</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </motion.div> */}
+                </div>
+
+                {/* Hover Glow Effect */}
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                  style={{
+                    background: `radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.1) 0%, transparent 50%)`
+                  }}
+                />
+              </motion.div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Enhanced CTA Button */}
-        <motion.div 
+        {/* Enhanced CTA Section */}
+        <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -121,17 +190,17 @@ export default function DeveloperSection() {
             }}
           >
             {/* Button background effect */}
-            <div 
+            <div
               className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-10 group-hover:opacity-25 transition-opacity duration-500"
               style={{ transform: 'translateX(-100%)', animation: 'shimmer 3s infinite' }}
             />
             <span className="relative z-10">Join Our Founding Team</span>
           </motion.button>
-          
-          
+
+
         </motion.div>
       </div>
-      
+
       <style jsx>{`
         @keyframes shimmer {
           0% {

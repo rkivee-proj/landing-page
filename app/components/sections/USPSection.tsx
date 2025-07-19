@@ -21,7 +21,7 @@ export default function USPSection() {
           className="text-center"
         >
           <motion.h2
-            className="text-4xl lg:text-6xl font-bold mb-6 text-light-text"
+            className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6 text-light-text"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -30,7 +30,7 @@ export default function USPSection() {
             The Chaos of Modern Post-Production
           </motion.h2>
           <motion.p
-            className="text-lg max-w-3xl mx-auto text-light-text-secondary"
+            className="text-base sm:text-lg max-w-3xl mx-auto text-light-text-secondary px-4 sm:px-0"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -40,8 +40,8 @@ export default function USPSection() {
           </motion.p>
         </motion.div>
 
-        {/* Exact Huly-style Bento Grid */}
-        <div className="grid grid-cols-2 gap-8 h-[800px]">
+        {/* Responsive Bento Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 h-full sm:h-[700px] lg:h-[800px]">
           {bentoFeatures.map((feature, index) => (
             <motion.div
               key={feature.title}
@@ -49,7 +49,7 @@ export default function USPSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 ease-out hover:scale-[1.02] ${
+              className={`relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 ease-out hover:scale-[1.02] h-96 ${
                 index === 0 ? 'bg-red-500' : 'bg-black'
               }`}
             >
