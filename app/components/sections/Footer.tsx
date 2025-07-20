@@ -1,5 +1,5 @@
 import Logo from '@/components/ui/Logo'
-import { Github, Linkedin, Mail, Twitter, Youtube } from 'lucide-react'
+import { Github, Link, Linkedin, Mail, Twitter, Youtube } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -16,35 +16,35 @@ export default function Footer() {
             {/* Social Media Icons */}
             <div className="flex space-x-4 pt-4">
               <a 
-                href="#" 
+                href="https://github.com/harshit960" 
                 className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-lg"
                 aria-label="GitHub"
               >
                 <Github size={20} />
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/in/harshit-raj-805630247/" 
                 className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-lg"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
               </a>
               <a 
-                href="#" 
+                href="https://x.com/horrid_harshh" 
                 className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-lg"
                 aria-label="Twitter"
               >
                 <Twitter size={20} />
               </a>
-              <a 
+              {/* <a 
                 href="#" 
                 className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-lg"
                 aria-label="YouTube"
               >
                 <Youtube size={20} />
-              </a>
+              </a> */}
               <a 
-                href="#" 
+                href="mailto:harshit960@gmail.com" 
                 className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-lg"
                 aria-label="Email"
               >
@@ -57,7 +57,7 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4">Company</h3>
             <nav className="space-y-3">
-              <a href="#" className="block text-gray-400 hover:text-white transition-colors text-sm">
+              <a href="/about" className="block text-gray-400 hover:text-white transition-colors text-sm">
                 About Us
               </a>
               <a href="/careers" className="block text-gray-400 hover:text-white transition-colors text-sm">
@@ -65,9 +65,6 @@ export default function Footer() {
               </a>
               <a href="/investors" className="block text-gray-400 hover:text-white transition-colors text-sm">
                 For Investors
-              </a>
-              <a href="#" className="block text-gray-400 hover:text-white transition-colors text-sm">
-                Press Kit
               </a>
             </nav>
           </div>
@@ -82,10 +79,10 @@ export default function Footer() {
               <a href="#" className="block text-gray-400 hover:text-white transition-colors text-sm">
                 Help Center
               </a>
-              <a href="#" className="block text-gray-400 hover:text-white transition-colors text-sm">
+              <a href="#" className="block hidden text-gray-400 hover:text-white transition-colors text-sm">
                 Documentation
               </a>
-              <a href="#" className="block text-gray-400 hover:text-white transition-colors text-sm">
+              <a href="#" className="block hidden text-gray-400 hover:text-white transition-colors text-sm">
                 Community
               </a>
             </nav>
@@ -104,7 +101,7 @@ export default function Footer() {
               <a href="#" className="block text-gray-400 hover:text-white transition-colors text-sm">
                 Cookie Policy
               </a>
-              <a href="#" className="block text-gray-400 hover:text-white transition-colors text-sm">
+              <a href="#" className="block hidden text-gray-400 hover:text-white transition-colors text-sm">
                 GDPR
               </a>
             </nav>

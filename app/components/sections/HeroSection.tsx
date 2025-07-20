@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Star, Users, ArrowDown } from 'lucide-react'
 import { COMPANY_INFO } from '@/lib/constants'
 import WaitlistForm from '@/components/ui/WaitlistForm'
+import ScrollIndicator from '../ui/ScrollIndicator'
 
 export default function HeroSection() {
   return (
@@ -109,21 +110,8 @@ export default function HeroSection() {
         </div>
 
         {/* Scroll indicator - Centered */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.5 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center gap-2 text-dark-text"
-          >
-            <span className="text-xs">Scroll to explore</span>
-            <ArrowDown size={16} />
-          </motion.div>
-        </motion.div>
+        <ScrollIndicator/>
+
       </div>
     </section>
   )
