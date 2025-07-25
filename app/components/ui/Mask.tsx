@@ -15,19 +15,19 @@ import WaitlistForm from './WaitlistForm';
 
 // URL of the image to be revealed
 // const IMAGE_URL = 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070&auto=format&fit=crop';
-const IMAGE_URL = '/bg1.png';
+const IMAGE_URL = '/revel.png';
 // The color of the overlay that hides the image
 // const MASK_COLOR = '#1A4314';
 // The URL of the mask image that hides the main image
 const MASK_IMAGE_URL = '/bg.png';
 // The size of the square "pixels" in pixels (e.g., 10x10 blocks)
-const PIXEL_SIZE = 20;
+const PIXEL_SIZE = 5;
 // The radius of the main revealed circle area
-const REVEAL_RADIUS = 10;
+const REVEAL_RADIUS = 80;
 // How far out the "noisy" edge extends from the main circle
-const NOISE_RANGE = 100;
+const NOISE_RANGE = 5;
 // Controls the density of revealed pixels in the noisy edge. 0.5 is 50% chance.
-const NOISE_DENSITY = 0.4;
+const NOISE_DENSITY = 0.7;
 
 export default function PixelatedReveal() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -107,7 +107,7 @@ export default function PixelatedReveal() {
         return;
       }
 
-      const { width, height } = canvas.getBoundingClientRect();
+      const { width, height } = canvas.getBoundingClientRect();      
       const { x: mouseX, y: mouseY } = mousePos.current;
 
       // Draw the mask image as the base
@@ -126,12 +126,18 @@ export default function PixelatedReveal() {
           const srcH = PIXEL_SIZE * scaleY;
           // 1. Inside the main circle: always reveal the image
           if (distance < REVEAL_RADIUS) {
+            context.save();
+            context.globalAlpha = 0.4; // Set desired opacity (e.g., 0.85)
             context.drawImage(img, srcX, srcY, srcW, srcH, x, y, PIXEL_SIZE, PIXEL_SIZE);
+            context.restore();
           }
           // 2. In the "noisy" zone: randomly decide to reveal or hide
           else if (distance < REVEAL_RADIUS + NOISE_RANGE) {
             if (Math.random() < NOISE_DENSITY) {
+              context.save();
+              context.globalAlpha = 0.1; // Set desired opacity (e.g., 0.85)
               context.drawImage(img, srcX, srcY, srcW, srcH, x, y, PIXEL_SIZE, PIXEL_SIZE);
+              context.restore();
             }
             // else: leave the mask image as is
           }
@@ -142,7 +148,7 @@ export default function PixelatedReveal() {
       // Request the next frame to create the continuous animation
       setTimeout(() => {
         animationFrameId.current = requestAnimationFrame(draw);
-      }, 100);
+      }, 0);
     };
 
     setupCanvas();
@@ -165,12 +171,14 @@ export default function PixelatedReveal() {
   // Update the mouse position ref when the mouse moves over the canvas
   const handleMouseMove = (event: React.MouseEvent<HTMLCanvasElement>) => {
     const rect = canvasRef.current?.getBoundingClientRect();
+    setTimeout(() => {
     if (rect) {
       mousePos.current = {
         x: event.clientX - rect.left,
         y: event.clientY - rect.top,
-      };
-    }
+        };
+      }
+    }, 150);
   };
 
   // When the mouse leaves, move the position way off-screen to hide the reveal effect
@@ -181,7 +189,8 @@ export default function PixelatedReveal() {
   return (
     <div className="relative w-full h-screen sm:h-screen bg-black flex items-center justify-center font-sans"
     onMouseMove={handleMouseMove}
-    onMouseLeave={handleMouseLeave}>
+    // onMouseLeave={handleMouseLeave}
+    >
       {/* Status message is shown while loading or on error */}
       {statusMessage && (
         <div className="absolute text-white z-10">{statusMessage}</div>
