@@ -169,7 +169,7 @@ export default function PixelatedReveal() {
   }, [isImageLoaded, isMaskLoaded]); // Rerun the effect if the image loading status changes
 
   // Update the mouse position ref when the mouse moves over the canvas
-  const handleMouseMove = (event: React.MouseEvent<HTMLCanvasElement>) => {
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     const rect = canvasRef.current?.getBoundingClientRect();
     setTimeout(() => {
     if (rect) {
