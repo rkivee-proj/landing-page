@@ -208,7 +208,7 @@ export default function PixelatedReveal() {
             className="mb-4"
           >
             <span
-              className="px-6 py-3 backdrop-blur-sm rounded-full text-sm inline-block"
+              className="px-6 py-3 backdrop-blur-sm rounded-full md:text-sm text-xs inline-block"
               style={{
                 backgroundColor: 'rgba(255, 255, 255, 0.1)',
                 // border: '1px solid rgba(245, 245, 240, 0.2)',
@@ -228,18 +228,18 @@ export default function PixelatedReveal() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="text-6xl lg:text-8xl mb-4 font-bold leading-[1] text-dark-text"
+            className="text-5xl lg:text-8xl mb-2 md:mb-4 font-bold leading-[1] text-dark-text"
           >
             {/* {COMPANY_INFO.tagline} */}
             Edit. Collaborate. 
-            <span className='line-through'> Archive.</span>
+            <span className=''> Archive.</span>
           </motion.h1>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg lg:text-xl max-w-3xl leading-relaxed"
+            className="text-sm lg:text-xl max-w-3xl mb-2 md:mb-4 leading-relaxed"
           >
             <div className="opacity-70">
               {COMPANY_INFO.description}
@@ -279,7 +279,7 @@ export default function PixelatedReveal() {
         </div>
 
         {/* Scroll indicator - Centered */}
-        <ScrollIndicator />
+        {/* <ScrollIndicator /> */}
 
       </div>
     </div>

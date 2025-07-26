@@ -111,10 +111,10 @@ export default function WaitlistForm() {
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="flex items-center gap-3 p-6 rounded-xl max-w-md bg-success/20 border border-success/30"
+        className="flex items-center gap-3 p-3 md:p-6 rounded-xl max-w-md bg-success/20 border border-success/30"
       >
         <Check size={24} className="text-accent-primary" />
-        <span className="text-lg text-dark-text">
+        <span className="text-sm md:text-lg text-dark-text">
           You're in! Check your email for confirmation.
         </span>
       </motion.div>
@@ -147,7 +147,7 @@ export default function WaitlistForm() {
           whileHover={{ scale: isLoading ? 1 : 1.05, y: isLoading ? 0 : -3 }}
           whileTap={{ scale: isLoading ? 1 : 0.95 }}
           disabled={isLoading}
-          className="relative px-8 py-4 rounded-full bg-white text-black font-semibold transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed min-w-[140px] justify-center overflow-hidden group"
+          className="relative px-8 py-3 md:py-4 rounded-full bg-white text-black font-semibold transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed min-w-[140px] justify-center overflow-hidden group"
           style={{
             // background: 'linear-gradient(135deg, #FCD34D 0%, #F59E0B 50%, #EF4444 100%)',
             // boxShadow: '0 0 30px rgba(245, 158, 11, 0.6), 0 0 60px rgba(245, 158, 11, 0.3), 0 0 90px rgba(245, 158, 11, 0.1)'
@@ -178,7 +178,7 @@ export default function WaitlistForm() {
           <span className="relative z-10 flex items-center gap-2">
             {isLoading ? (
               <div 
-                className="w-5 h-5 border-2 rounded-full animate-spin border-white border-t-transparent"
+                className="w-4 h-4 border-2 rounded-full animate-spin border-white border-t-transparent"
               />
             ) : (
               <>
