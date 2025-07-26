@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Check } from 'lucide-react'
 import type { WaitlistFormData } from '@/types'
-import { isValidEmail, simulateAPICall } from '@/lib/utils'
+import { isValidEmail } from '@/lib/utils'
 
 export default function WaitlistForm() {
   const [formData, setFormData] = useState<WaitlistFormData>({ email: '' })
@@ -16,8 +16,13 @@ export default function WaitlistForm() {
     e.preventDefault()
     setError('')
     
-    // Only validate email if one is provided
-    if (formData.email && !isValidEmail(formData.email)) {
+    // Validate email
+    if (!formData.email) {
+      setError('Please enter your email address')
+      return
+    }
+    
+    if (!isValidEmail(formData.email)) {
       setError('Please enter a valid email address')
       return
     }
@@ -25,14 +30,70 @@ export default function WaitlistForm() {
     setIsLoading(true)
     
     try {
-      // Simulate API call
-      await simulateAPICall(1500)
+      // Send email to admin about new waitlist signup
+      const adminEmailResponse = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          to: process.env.NEXT_PUBLIC_ADMIN_EMAIL || 'admin@yourdomain.com',
+          subject: 'New Waitlist Signup',
+          html: `
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+              <h2 style="color: #333;">New Waitlist Signup</h2>
+              <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <p><strong>Email:</strong> ${formData.email}</p>
+                <p><strong>Signup Date:</strong> ${new Date().toLocaleString()}</p>
+              </div>
+              <p style="color: #666; font-size: 12px;">
+                This email was sent from your website's waitlist form.
+              </p>
+            </div>
+          `,
+          text: `New Waitlist Signup\n\nEmail: ${formData.email}\nSignup Date: ${new Date().toLocaleString()}\n\nThis email was sent from your website's waitlist form.`
+        })
+      })
+
+      if (!adminEmailResponse.ok) {
+        throw new Error('Failed to send admin notification')
+      }
+
+      // Send confirmation email to user
+      const userEmailResponse = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          to: formData.email,
+          subject: 'Welcome to the Waitlist!',
+          html: `
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+              <h2 style="color: #333;">Welcome to the Waitlist!</h2>
+              <p>Hi there,</p>
+              <p>Thank you for joining our waitlist! We're excited to have you on board.</p>
+              <p>We'll keep you updated on our progress and notify you as soon as early access is available.</p>
+              <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <p><strong>Your email:</strong> ${formData.email}</p>
+                <p><strong>Signup date:</strong> ${new Date().toLocaleDateString()}</p>
+              </div>
+              <p>Stay tuned for updates!</p>
+              <p>Best regards,<br>rKivee Team</p>
+            </div>
+          `,
+          text: `Welcome to the Waitlist!\n\nHi there,\n\nThank you for joining our waitlist! We're excited to have you on board.\n\nWe'll keep you updated on our progress and notify you as soon as early access is available.\n\nYour email: ${formData.email}\nSignup date: ${new Date().toLocaleDateString()}\n\nStay tuned for updates!\n\nBest regards,\nYour Team`
+        })
+      })
+
+      if (!userEmailResponse.ok) {
+        throw new Error('Failed to send confirmation email')
+      }
       
-      // Here you would typically send the email to your backend
-      console.log('Waitlist signup:', formData.email || 'No email provided')
-      
+      console.log('Waitlist signup successful:', formData.email)
       setIsSubmitted(true)
     } catch (err) {
+      console.error('Waitlist signup error:', err)
       setError('Something went wrong. Please try again.')
     } finally {
       setIsLoading(false)
@@ -54,7 +115,7 @@ export default function WaitlistForm() {
       >
         <Check size={24} className="text-accent-primary" />
         <span className="text-lg text-dark-text">
-          You're in! Early access coming soon.
+          You're in! Check your email for confirmation.
         </span>
       </motion.div>
     )

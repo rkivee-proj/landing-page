@@ -15,7 +15,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
                             }
         };
         initScroll();
-        alert('Landing page is still under development. Pls mail on raj.harshit960@gmail.com to get alpha access.');
+        // alert('Landing page is still under development. Pls mail on raj.harshit960@gmail.com to get alpha access.');
     }, []);
 
     return (

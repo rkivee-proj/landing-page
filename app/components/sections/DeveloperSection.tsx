@@ -4,6 +4,44 @@ import { motion } from 'framer-motion'
 import { Code, GitBranch, Users, Zap, ArrowRight, Sparkles } from 'lucide-react'
 
 export default function DeveloperSection() {
+  const handleJoinTeamClick = () => {
+    const adminEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL || 'admin@rkivee.com';
+    const subject = encodeURIComponent('Interest in Joining rkivee Founding Team');
+    const body = encodeURIComponent(`Hi there,
+
+I'm interested in joining the rkivee founding team.
+
+About me:
+- Role: [Fullstack Developer / UI/UX Designer / Video Editor / Other]
+- Experience: [Years of experience in relevant field]
+- Current position: [Your current role and company]
+- Location: [Your location/timezone]
+
+My relevant skills and experience:
+- [List your key technical skills, tools, and technologies]
+- [Any relevant projects or portfolio links]
+- [Experience with collaboration tools, design systems, or video editing workflows]
+
+Why I'm interested in rkivee:
+- [What excites you about the platform]
+- [How your skills align with the product vision]
+- [Any specific areas you'd like to contribute to]
+
+I'm particularly interested in:
+- [Remote work opportunities / Part-time / Full-time]
+- [Any specific role or responsibilities you're looking for]
+- [Your availability and timeline]
+
+Please let me know the next steps in the application process.
+
+Best regards,
+[Your Name]
+[Your Portfolio/Website]
+[Your LinkedIn/Professional Profile]`);
+
+    window.open(`mailto:${adminEmail}?subject=${subject}&body=${body}`, '_blank');
+  };
+
   return (
     <section
       className="py-32 pt-24  px-6 lg:px-12 relative overflow-hidden"
@@ -172,6 +210,7 @@ export default function DeveloperSection() {
           viewport={{ once: true }}
         >
           <motion.button
+            onClick={handleJoinTeamClick}
             whileHover={{ scale: 1.05, y: -3 }}
             whileTap={{ scale: 0.95 }}
             className="relative px-12 py-4 text-lg font-bold rounded-2xl transition-all duration-300 overflow-hidden group"

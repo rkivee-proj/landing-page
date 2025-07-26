@@ -3,6 +3,25 @@
 import { motion } from 'framer-motion'
 
 export default function DemoVideoSection() {
+  const handleDemoRequestClick = () => {
+    const adminEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL || 'admin@rkivee.com';
+    const subject = encodeURIComponent('Demo Request - rkivee Platform');
+    const body = encodeURIComponent(`Hi there,
+
+I'm interested in learning more about rkivee and would like to schedule a full demo of your platform.
+
+Could you please provide me with:
+- Available demo time slots
+
+Please let me know the best way to proceed.
+
+Best regards,
+[Your Name]
+[Your Company]
+[Your Role]`);
+
+    window.open(`mailto:${adminEmail}?subject=${subject}&body=${body}`, '_blank');
+  };
 
   return (
     <section
@@ -147,6 +166,7 @@ export default function DemoVideoSection() {
           className="mt-20"
         >
           <motion.button
+            onClick={handleDemoRequestClick}
             whileHover={{
               scale: 1.05,
               boxShadow: "0 0 30px rgba(242, 169, 0, 0.5)"
