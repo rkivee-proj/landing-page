@@ -126,35 +126,35 @@ export default function InvestorsPage() {
                 <tbody>
                   <tr className="border-b border-white/10">
                     <td className="p-6 font-medium text-white">Git-Powered Version Control</td>
-                    <td className="p-6 text-green-400 font-bold">Yes (Core Differentiator)</td>
+                    <td className="p-6 text-white font-bold  decoration-2 -offset-1">Yes (Core Differentiator)</td>
                     <td className="p-6 text-red-400">No</td>
                     <td className="p-6 text-red-400">No</td>
                     <td className="p-6 text-red-400">No</td>
                   </tr>
                   <tr className="border-b border-white/10">
                     <td className="p-6 font-medium text-white">Frame-Accurate Video Review</td>
-                    <td className="p-6 text-green-400">Yes</td>
-                    <td className="p-6 text-green-400">Yes</td>
-                    <td className="p-6 text-green-400">Yes</td>
+                    <td className="p-6 text-white  decoration-2 -offset-1">Yes</td>
+                    <td className="p-6 text-white">Yes</td>
+                    <td className="p-6 text-white">Yes</td>
                     <td className="p-6 text-red-400">No</td>
                   </tr>
                   <tr className="border-b border-white/10">
                     <td className="p-6 font-medium text-white">Google Drive Integration</td>
-                    <td className="p-6 text-green-400 font-bold">Native (Core Architecture)</td>
-                    <td className="p-6 text-green-400">Yes (Integration)</td>
-                    <td className="p-6 text-green-400">Yes (Integration)</td>
-                    <td className="p-6 text-green-400">Yes (Integration)</td>
+                    <td className="p-6 text-white font-bold  decoration-2 -offset-1">Native (Core Architecture)</td>
+                    <td className="p-6 text-white">Yes (Integration)</td>
+                    <td className="p-6 text-white">Yes (Integration)</td>
+                    <td className="p-6 text-white">Yes (Integration)</td>
                   </tr>
                   <tr className="border-b border-white/10">
                     <td className="p-6 font-medium text-white">Basic Task Management</td>
-                    <td className="p-6 text-green-400">Yes</td>
+                    <td className="p-6 text-white  decoration-2 -offset-1">Yes</td>
                     <td className="p-6 text-yellow-400">Limited</td>
                     <td className="p-6 text-red-400">No</td>
-                    <td className="p-6 text-green-400">Yes</td>
+                    <td className="p-6 text-white">Yes</td>
                   </tr>
                   <tr className="border-b border-white/10">
                     <td className="p-6 font-medium text-white">Resource Planning</td>
-                    <td className="p-6 text-yellow-400">No (Roadmap)</td>
+                    <td className="p-6 text-white  decoration-2 -offset-1">No (Roadmap)</td>
                     <td className="p-6 text-red-400">No</td>
                     <td className="p-6 text-red-400">No</td>
                     <td className="p-6 text-yellow-400">No (Advanced Plan)</td>
@@ -168,7 +168,7 @@ export default function InvestorsPage() {
                   </tr>
                   <tr>
                     <td className="p-6 font-medium text-white">Starting Price (Annual)</td>
-                    <td className="p-6 text-green-400 font-bold">~$600/year (Team)</td>
+                    <td className="p-6 text-white font-bold  decoration-2 -offset-1">~$600/year (Team)</td>
                     <td className="p-6 text-white">$4,320/year (15 users)</td>
                     <td className="p-6 text-white">$1,308/year</td>
                     <td className="p-6 text-white">~$1,320/year (10 users)</td>
