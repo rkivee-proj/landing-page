@@ -107,7 +107,7 @@ export default function SocialProof() {
             <div 
               className="rounded-xl flex items-center justify-center"
             >
-              <Image src="/icons/Drive.png" alt="Google Drive" width={48} height={48} />
+              <Image src="/icons/drive.png" alt="Google Drive" width={48} height={48} />
             </div>
             <div>
               <div className="font-semibold" style={{ color: '#111827' }}>
