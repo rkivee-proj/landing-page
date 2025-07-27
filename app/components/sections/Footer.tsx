@@ -44,7 +44,7 @@ export default function Footer() {
                 <Youtube size={20} />
               </a> */}
               <a 
-                href={process.env.NEXT_PUBLIC_ADMIN_EMAIL}
+                href={`mailto:${process.env.NEXT_PUBLIC_ADMIN_EMAIL}`}
                 className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-lg"
                 aria-label="Email"
               >
