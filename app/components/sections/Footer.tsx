@@ -23,14 +23,14 @@ export default function Footer() {
                 <Github size={20} />
               </a>
               <a 
-                href="https://www.linkedin.com/in/harshit-raj-805630247/" 
+                href="https://www.linkedin.com/company/rkivee/" 
                 className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-lg"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
               </a>
               <a 
-                href="https://x.com/horrid_harshh" 
+                href="https://x.com/rkiveehq" 
                 className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-lg"
                 aria-label="Twitter"
               >
@@ -44,7 +44,7 @@ export default function Footer() {
                 <Youtube size={20} />
               </a> */}
               <a 
-                href="mailto:harshit960@gmail.com" 
+                href={process.env.NEXT_PUBLIC_ADMIN_EMAIL}
                 className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-lg"
                 aria-label="Email"
               >
